@@ -1,0 +1,9 @@
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\bin\Debug\RainFlowConsoleApp.Test.dll
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\bin\Debug\RainFlowConsoleApp.Test.pdb
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\bin\Debug\nunit.framework.dll
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\bin\Debug\nunit.framework.xml
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\obj\Debug\RainFlowConsoleApp.Test.csprojResolveAssemblyReference.cache
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\obj\Debug\RainFlowConsoleApp.Test.dll
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\obj\Debug\RainFlowConsoleApp.Test.pdb
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\bin\Debug\RainFlowConsoleApp.exe
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp.Test\bin\Debug\RainFlowConsoleApp.pdb

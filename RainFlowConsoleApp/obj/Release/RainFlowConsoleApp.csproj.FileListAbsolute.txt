@@ -1,0 +1,6 @@
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp\bin\Release\RainFlowConsoleApp.exe.config
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp\bin\Release\RainFlowConsoleApp.exe
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp\bin\Release\RainFlowConsoleApp.pdb
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp\obj\Release\RainFlowConsoleApp.exe
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp\obj\Release\RainFlowConsoleApp.pdb
+E:\Kryzhanovskiy\Valera\RainFlowConsoleApp\RainFlowConsoleApp\obj\Release\RainFlowConsoleApp.csprojResolveAssemblyReference.cache
