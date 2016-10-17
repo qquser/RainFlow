@@ -10,10 +10,10 @@ namespace RainFlowConsoleApp.LinkedList
 {
     public static class MyLinkedListExtentions
     {
-        public static void RemoveListNodesById<TData>(this MyLinkedList<TData> list, List<int> listIds) where TData : IData
+        public static void RemoveAll<TData>(this MyLinkedList<TData> list, IEnumerable<Node<TData>> listNodes) where TData : IData
         {
-            foreach (var id in listIds)
-                list.RemoveFirst(x => x.Id == id);
+            foreach (Node<TData> node in listNodes)
+                list.RemoveFirst(x => x.Id == node.Value.Id);
         }
     }
 }
