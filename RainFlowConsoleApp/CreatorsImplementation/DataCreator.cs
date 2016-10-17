@@ -20,13 +20,12 @@ namespace RainFlowConsoleApp.CreatorsImplementation
 
             foreach (var item in input.Split(' '))
             {
-                int? previousId = i == 0 ? null : (int?)i - 1;
                 var data = new FlowData
                 {
                     Id = i++,
                     StartPointValue = decimal.Parse(item.Replace(',','.'), CultureInfo.InvariantCulture)
                 };
-                list.AddAfter(previousId, data);
+                list.AddLast(data);
             }
             FillPointType(list);
             return list;

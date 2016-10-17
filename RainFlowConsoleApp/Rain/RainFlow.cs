@@ -10,11 +10,17 @@ namespace RainFlowConsoleApp.Rain
 {
     public class RainFlow : IRainFlow<FlowData>
     {
-        public MyLinkedList<FlowData> Data { get; set;}
+
+        public MyLinkedList<FlowData> Data => RainCreator?.GetListFlows(Input, DataCreator);
+        public IRainCreator<FlowData> RainCreator { get; set; }
+        public IDataCreator<FlowData> DataCreator { get; set; }
+        public string Input { get; set; }
 
         public RainFlow(string input, IRainCreator<FlowData> rainCreator, IDataCreator<FlowData> dataCreator)
         {
-            Data = rainCreator?.GetListFlows(input, dataCreator);
+            Input = input;
+            RainCreator = rainCreator;
+            DataCreator = dataCreator;
         }
 
         public void PrintResult()

@@ -10,21 +10,62 @@ using System.Threading.Tasks;
 
 namespace RainFlowConsoleApp.LinkedList
 {
-    public class MyLinkedList<TData> : IEnumerable<Node<TData>> where TData : IData
+    public class MyLinkedList<TData> : IEnumerable<Node<TData>>
     {
         public Node<TData> Head { get; set; }
 
-        public void AddAfter(int? currentId, TData data)
+        public void AddFirst(TData data)
         {
-            if (currentId == null)
+            var toAdd = new Node<TData>
             {
-                Head = new Node<TData> { Value = data };
-                return;
+                Value = data,
+                Next = Head
+            };
+            Head = toAdd;
+        }
+
+        public void AddLast(TData data)
+        {
+            if (Head == null)
+            {
+                Head = new Node<TData>
+                {
+                    Value = data,
+                    Next = null
+                };
+
             }
+            else
+            {
+                var current = Head;
+                while (current != null)
+                {
+                    if (current.Next == null)
+                    {
+                        var newNode = new Node<TData>
+                        {
+                            Previous = current,
+                            Next = current.Next,
+                            Value = data
+                        };
+
+                        if (current.Next != null)
+                            current.Next.Previous = newNode;
+                        current.Next = newNode;
+                        return;
+                    }
+                    current = current.Next;
+                }
+            }
+        }
+
+
+        public void AddAfter(Func<TData, bool> func, TData data)
+        {
             var current = Head;
             while (current != null)
             {
-                if (current.Value.Id == currentId)
+                if (func(current.Value))
                 {
                     var newNode = new Node<TData>
                     {

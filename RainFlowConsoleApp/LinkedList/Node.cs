@@ -7,7 +7,7 @@ using RainFlowConsoleApp.Data;
 
 namespace RainFlowConsoleApp.LinkedList
 {
-    public class Node<TData> where TData: IData
+    public class Node<TData> 
     {
         public Node<TData> Previous { get; set; }
         public Node<TData> Next { get; set; }
