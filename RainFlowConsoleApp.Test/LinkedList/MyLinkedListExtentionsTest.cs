@@ -26,8 +26,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            var listIds = list.Where(x => x.Value.PointType == EnumPointType.None).Select(x => x.Value.Id).ToList();
-            list.RemoveListNodesById(listIds);
+            var listNodes = list.Where(x => x.Value.PointType == EnumPointType.None);
+            list.RemoveAll(listNodes);
 
             Assert.AreEqual(list.Count(), 2);
         }
@@ -45,8 +45,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            var listIds = list.Where(x => x.Value.PointType == EnumPointType.None).Select(x => x.Value.Id).ToList();
-            list.RemoveListNodesById(listIds);
+            var listNodes = list.Where(x => x.Value.PointType == EnumPointType.None);
+            list.RemoveAll(listNodes);
 
             Assert.AreEqual(list.First().Value.Id, 2);
         }
@@ -64,8 +64,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            var listIds = list.Where(x => x.Value.PointType == EnumPointType.None).Select(x => x.Value.Id).ToList();
-            list.RemoveListNodesById(listIds);
+            var listNodes = list.Where(x => x.Value.PointType == EnumPointType.None);
+            list.RemoveAll(listNodes);
 
             Assert.AreEqual(list.Last().Value.Id, 5);
         }
