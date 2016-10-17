@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Creators\DataCreatorTest.cs" />
     <Compile Include="Creators\RainCreatorTest.cs" />
-    <Compile Include="LinkedList\MyLinkedListExtentionsTest.cs" />
     <Compile Include="LinkedList\MyLinkedListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

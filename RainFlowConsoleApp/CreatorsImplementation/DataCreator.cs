@@ -57,8 +57,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 else
                     item.Value.PointType = EnumPointType.None;
             }
-            var listNodes = list.Where(x => x.Value.PointType == EnumPointType.None);
-            list.RemoveAll(listNodes);
+            list.RemoveAll(x => x.PointType == EnumPointType.None);
         }
 
 
@@ -82,9 +81,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (item.Value.StartPointValue == item.Previous?.Value?.StartPointValue)
                     item.Value.PointType = EnumPointType.None;
             }
-
-            var listNodes = list.Where(x => x.Value.PointType == EnumPointType.None);
-            list.RemoveAll(listNodes);
+            list.RemoveAll(x => x.PointType == EnumPointType.None);
         }
     }
 }

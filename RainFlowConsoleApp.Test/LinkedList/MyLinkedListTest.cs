@@ -9,7 +9,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
     public class MyLinkedListTest
     {
         [Test]
-        public void RemoveFirst_None_FirstEqual2()
+        public void RemoveAll_None_FirstEqual2()
         {
             var list = new MyLinkedList<IData>();
             var data1 = new FlowData { Id = 1, PointType = EnumPointType.None };
@@ -21,7 +21,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            list.RemoveFirst(x=>x.PointType == EnumPointType.None);
+            list.RemoveAll(x=>x.PointType == EnumPointType.None);
 
             Assert.AreEqual(list.Head.Value.Id, 2);
         }
@@ -39,7 +39,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            list.RemoveFirst(x=>x.Id == 1);
+            list.RemoveAll(x=>x.Id == 1);
 
             Assert.AreEqual(list.Head.Value.Id, 2);
         }
@@ -51,7 +51,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data1 = new FlowData { Id = 1 };
             list.AddAfter(null, data1);
 
-            list.RemoveFirst(x => x.Id == 1);
+            list.RemoveAll(x => x.Id == 1);
 
             Assert.That(list.Head, Is.Null);
         }
@@ -69,7 +69,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            list.RemoveFirst(x => x.Id == 2);
+            list.RemoveAll(x => x.Id == 2);
 
             Assert.AreEqual(list.Head.Next.Value.Id, 5);
         }
@@ -87,7 +87,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(2, data3);
             list.AddAfter(2, data5);
 
-            list.RemoveFirst(x => x.Id == 2);
+            list.RemoveAll(x => x.Id == 2);
 
             Assert.AreEqual(list.Head.Next.Next.Previous.Value.Id, 5);
         }
@@ -101,7 +101,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             list.AddAfter(null, data1);
             list.AddAfter(1, data2);
 
-            list.RemoveFirst(x => x.Id == 2);
+            list.RemoveAll(x => x.Id == 2);
 
             Assert.That(list.Head.Next, Is.Null);
         }

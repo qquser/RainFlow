@@ -42,9 +42,7 @@ namespace RainFlowConsoleApp.LinkedList
             }
         }
 
-
-
-        public void RemoveFirst(Func<TData, bool> func)
+        public void RemoveAll(Func<TData, bool> func)
         {
             var current = Head;
             while (current != null)
@@ -56,13 +54,13 @@ namespace RainFlowConsoleApp.LinkedList
                         if (current.Next != null)
                             current.Next.Previous = null;
                         Head = current.Next;
-                        return;
+                        current = current.Next;
+                        continue;
                     }
                     current.Previous.Next = current.Next;
 
                     if (current.Next != null)
                         current.Next.Previous = current.Previous;
-                    return;
                 }
                 current = current.Next;
             }

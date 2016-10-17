@@ -48,7 +48,6 @@
     <Compile Include="Data\IData.cs" />
     <Compile Include="Creators\IRainCreator.cs" />
     <Compile Include="LinkedList\MyLinkedList.cs" />
-    <Compile Include="LinkedList\MyLinkedListExtentions.cs" />
     <Compile Include="LinkedList\Node.cs" />
     <Compile Include="Rain\IRainFlow.cs" />
     <Compile Include="Data\EnumPointType.cs" />
