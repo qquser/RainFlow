@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,11 +73,14 @@ namespace RainFlowConsoleApp.Test.Creators
             var dataCreator = new DataCreator();
             var list = dataCreator.CreateList("0.1 0,2 0.3 0.4 0.5 0,77 1,1 1,1 -5.55454654 5 -3 -2 -2").ToList();
             const string expectedResult = @"0.1 1.1 -5.55454654 5 -3 -2";
+            string expectedResultDecemal =
+                String.Join(" ",
+                    expectedResult.Split(' ').ToList().Select(x => decimal.Parse(x, CultureInfo.InvariantCulture)));
 
             var names = list.Select(x => x.Value.StartPointValue);
             var result = String.Join(" ", names.ToArray());
 
-            Assert.That(result, Is.EqualTo(expectedResult));
+            Assert.That(result, Is.EqualTo(expectedResultDecemal));
         }
 
         [Test]

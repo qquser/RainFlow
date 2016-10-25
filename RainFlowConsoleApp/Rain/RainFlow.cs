@@ -25,8 +25,8 @@ namespace RainFlowConsoleApp.Rain
 
         public void PrintResult()
         {
-            Console.WriteLine("Num\tStart\tEnd\tFlow Type");
-            Data.ToList().ForEach(x=>Console.Write($"{x.Value.Id}\t{x.Value.StartPointValue}\t{x.Value.EndPointValue}\t{x.Value.PointType}\t\n"));
+            Console.WriteLine("Num\tStart\tEnd\tType\tStartId\tEndId");
+            Data.ToList().ForEach(x=>Console.Write($"{x.Value.Id}\t{x.Value.StartPointValue}\t{x.Value.EndPointValue}\t{x.Value.PointType}\t{x.Value.StartId}\t{x.Value.EndId}\t\n"));
         }
     }
 }

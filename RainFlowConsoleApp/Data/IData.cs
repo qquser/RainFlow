@@ -7,5 +7,7 @@ namespace RainFlowConsoleApp.Data
         decimal StartPointValue { get; set; }
         decimal? EndPointValue { get; set; }
         EnumPointType PointType { get; set; }
+        int StartId { get; set; }
+        int EndId { get; set; }
     }
 }

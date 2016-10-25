@@ -9,6 +9,8 @@ namespace RainFlowConsoleApp.DataImplementation
         public decimal StartPointValue { get; set; }
         public decimal? EndPointValue { get; set; }
         public EnumPointType PointType { get; set; }
+        public int StartId { get; set; }
+        public int EndId { get; set; }
         public bool MinFlowAlreadyExist { get; set; }
         public bool MaxFlowAlreadyExist { get; set; }
     }

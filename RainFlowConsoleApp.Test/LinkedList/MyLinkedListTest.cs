@@ -17,11 +17,11 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data3 = new FlowData { Id = 3, PointType = EnumPointType.None};
             var data5 = new FlowData { Id = 5 };
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 2, data3);
-            list.AddAfter(x => x.Id == 2, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 2, data3);
+            list.AddAfter(x => x.Value.Id == 2, data5);
 
-            list.RemoveAll(x=>x.PointType == EnumPointType.None);
+            list.RemoveAll(x=>x.Value.PointType == EnumPointType.None);
 
             Assert.AreEqual(list.Head.Value.Id, 2);
         }
@@ -35,11 +35,11 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data3 = new FlowData { Id = 3 };
             var data5 = new FlowData { Id = 5 };
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 2, data3);
-            list.AddAfter(x => x.Id == 2, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 2, data3);
+            list.AddAfter(x => x.Value.Id == 2, data5);
 
-            list.RemoveAll(x=>x.Id == 1);
+            list.RemoveAll(x=>x.Value.Id == 1);
 
             Assert.AreEqual(list.Head.Value.Id, 2);
         }
@@ -51,7 +51,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data1 = new FlowData { Id = 1 };
             list.AddFirst(data1);
 
-            list.RemoveAll(x => x.Id == 1);
+            list.RemoveAll(x => x.Value.Id == 1);
 
             Assert.That(list.Head, Is.Null);
         }
@@ -65,11 +65,11 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data3 = new FlowData { Id = 3 };
             var data5 = new FlowData { Id = 5 };
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 2, data3);
-            list.AddAfter(x => x.Id == 2, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 2, data3);
+            list.AddAfter(x => x.Value.Id == 2, data5);
 
-            list.RemoveAll(x => x.Id == 2);
+            list.RemoveAll(x => x.Value.Id == 2);
 
             Assert.AreEqual(list.Head.Next.Value.Id, 5);
         }
@@ -83,11 +83,11 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data3 = new FlowData { Id = 3 };
             var data5 = new FlowData { Id = 5 };
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 2, data3);
-            list.AddAfter(x => x.Id == 2, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 2, data3);
+            list.AddAfter(x => x.Value.Id == 2, data5);
 
-            list.RemoveAll(x => x.Id == 2);
+            list.RemoveAll(x => x.Value.Id == 2);
 
             Assert.AreEqual(list.Head.Next.Next.Previous.Value.Id, 5);
         }
@@ -99,9 +99,9 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data1 = new FlowData { Id = 1 };
             var data2 = new FlowData { Id = 2 };
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data2);
 
-            list.RemoveAll(x => x.Id == 2);
+            list.RemoveAll(x => x.Value.Id == 2);
 
             Assert.That(list.Head.Next, Is.Null);
         }
@@ -141,7 +141,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data2 = new FlowData { Id = 2 };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data2);
 
             Assert.AreEqual(list.Head.Next.Value.Id, 2);
         }
@@ -155,7 +155,7 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data2 = new FlowData { Id = 2 };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data2);
 
             Assert.AreEqual(list.Head.Next.Previous.Value.Id, 1);
         }
@@ -170,8 +170,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data5 = new FlowData { Id = 5 };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 1, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data5);
 
             Assert.AreEqual(list.Head.Next.Value.Id, 5);
         }
@@ -186,8 +186,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data5 = new FlowData { Id = 5 };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 1, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data5);
 
             var last = list.Head.Next.Next;
             Assert.AreEqual(last.Previous.Value.Id, 5);
@@ -204,8 +204,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data5 = new FlowData {  };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 1, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data5);
 
             Assert.That(list.Head.Previous, Is.Null);
         }
@@ -221,8 +221,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data5 = new FlowData { };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 1, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data5);
 
             Assert.That(list.Head.Next, Is.Null);
         }
@@ -238,8 +238,8 @@ namespace RainFlowConsoleApp.Test.LinkedList
             var data5 = new FlowData { };
 
             list.AddFirst(data1);
-            list.AddAfter(x => x.Id == 1, data2);
-            list.AddAfter(x => x.Id == 1, data5);
+            list.AddAfter(x => x.Value.Id == 1, data2);
+            list.AddAfter(x => x.Value.Id == 1, data5);
 
             Assert.AreEqual(list.Head.Value.Id, 0);
         }

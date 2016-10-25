@@ -33,39 +33,18 @@ namespace RainFlowConsoleApp.LinkedList
                     Value = data,
                     Next = null
                 };
-
+                return;
             }
-            else
-            {
-                var current = Head;
-                while (current != null)
-                {
-                    if (current.Next == null)
-                    {
-                        var newNode = new Node<TData>
-                        {
-                            Previous = current,
-                            Next = current.Next,
-                            Value = data
-                        };
-
-                        if (current.Next != null)
-                            current.Next.Previous = newNode;
-                        current.Next = newNode;
-                        return;
-                    }
-                    current = current.Next;
-                }
-            }
+            this.AddAfter(x => x.Next == null, data);
         }
 
 
-        public void AddAfter(Func<TData, bool> func, TData data)
+        public void AddAfter(Func<Node<TData>, bool> func, TData data)
         {
             var current = Head;
             while (current != null)
             {
-                if (func(current.Value))
+                if (func(current))
                 {
                     var newNode = new Node<TData>
                     {
@@ -83,12 +62,12 @@ namespace RainFlowConsoleApp.LinkedList
             }
         }
 
-        public void RemoveAll(Func<TData, bool> func)
+        public void RemoveAll(Func<Node<TData>, bool> func)
         {
             var current = Head;
             while (current != null)
             {
-                if (func(current.Value))
+                if (func(current))
                 {
                     if (current.Previous == null)
                     {

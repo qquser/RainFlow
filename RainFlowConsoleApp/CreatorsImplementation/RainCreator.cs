@@ -27,6 +27,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
             var startValue = list.FirstOrDefault(x=>x.Value.Id == startIndex)?.Value;
             if (startValue == null || startValue.PointType == EnumPointType.Max)
                 return;
+            startValue.StartId = startValue.Id;
             foreach (var entry in list.Where(x => x.Value.Id >= startIndex))
             {
                 var item = entry.Value;
@@ -39,6 +40,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (item.StartPointValue < startValue.StartPointValue)
                 {
                     startValue.EndPointValue = maxValue;
+                    startValue.EndId = entry.Value.Id;
                     return;
                 }
 
@@ -49,6 +51,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (previousItem != null && nextItem != null && item.MinFlowAlreadyExist && nextItem.StartPointValue > previousItem.StartPointValue)
                 {
                     startValue.EndPointValue = previousItem.StartPointValue;
+                    startValue.EndId = entry.Value.Id;
                     return;
                 }
 
@@ -60,6 +63,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (item.StartPointValue == endValue)
                 {
                     startValue.EndPointValue = endValue;
+                    startValue.EndId = entry.Value.Id;
                     return;
                 }
                 //Течет дальше
@@ -74,6 +78,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
             if (startValue == null || startValue.PointType == EnumPointType.Min)
                 return;
 
+            startValue.StartId = startValue.Id;
             foreach (var entry in list.Where(x => x.Value.Id >= startIndex))
             {
                 var item = entry.Value;
@@ -85,6 +90,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (item.StartPointValue > startValue.StartPointValue)
                 {
                     startValue.EndPointValue = minValue;
+                    startValue.EndId = entry.Value.Id;
                     return;
                 }
 
@@ -93,6 +99,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (previousItem != null && nextItem != null && item.MaxFlowAlreadyExist && nextItem.StartPointValue < previousItem.StartPointValue)
                 {
                     startValue.EndPointValue = previousItem.StartPointValue;
+                    startValue.EndId = entry.Value.Id;
                     return;
                 }
 
@@ -103,6 +110,7 @@ namespace RainFlowConsoleApp.CreatorsImplementation
                 if (item.StartPointValue == endValue)
                 {
                     startValue.EndPointValue = endValue;
+                    startValue.EndId = entry.Value.Id;
                     return;
                 }
 

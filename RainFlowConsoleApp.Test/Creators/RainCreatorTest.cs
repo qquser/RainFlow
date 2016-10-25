@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,14 +49,18 @@ namespace RainFlowConsoleApp.Test.Creators
         {
             var dataCreator = new DataCreator();
             var rainCreator = new RainCreator();
-            string input = "-5 -2 -1,215 3 -2 5 1 3 -3 -2 -3,2222 -5";
+            string input = "-5 -2 -1,215 3 -2 5,125 1 3 -3 -2 -3,2222 -5";
             var list = rainCreator.GetListFlows(input, dataCreator);
-            const string expectedResult = "5 -2 3 -5 3 1 -2 -3 ";
+            var expectedResult = "5.125 -2 3 -5 3 1 -2 -3";
+            string expectedResultDecemal =
+                String.Join(" ",
+                    expectedResult.Split(' ').ToList().Select(x => decimal.Parse(x, CultureInfo.InvariantCulture))) +
+                " ";
 
             var names = list.Select(x => x.Value.EndPointValue);
             var result = String.Join(" ", names.ToArray());
 
-            Assert.AreEqual(result, expectedResult);
+            Assert.AreEqual(result, expectedResultDecemal);
         }
     }
 }
