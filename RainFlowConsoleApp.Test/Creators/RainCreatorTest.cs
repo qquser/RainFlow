@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using RainFlowConsoleApp.CreatorsImplementation;
+using RF.CreatorsImplementation;
 
-namespace RainFlowConsoleApp.Test.Creators
+namespace RF.Test.Creators
 {
     [TestFixture]
     class RainCreatorTest
@@ -23,7 +23,7 @@ namespace RainFlowConsoleApp.Test.Creators
             const string expectedResult = @"10 -20 40 -40 40 20 20 0 -10 -30 70 10 30 -50 10 -10 50 -30 0 -20 30 -10 10 ";
 
             var names = list.Select(x => x.Value.EndPointValue);
-            var result = String.Join(" ", names.ToArray());
+            var result = string.Join(" ", names.ToArray());
 
             Assert.AreEqual(result, expectedResult);
         }
@@ -39,7 +39,7 @@ namespace RainFlowConsoleApp.Test.Creators
             const string expectedResult = "5 -2 3 -5 3 1 -2 -3 ";
 
             var names = list.Select(x => x.Value.EndPointValue);
-            var result = String.Join(" ", names.ToArray());
+            var result = string.Join(" ", names.ToArray());
 
             Assert.AreEqual(result, expectedResult);
         }
@@ -53,12 +53,12 @@ namespace RainFlowConsoleApp.Test.Creators
             var list = rainCreator.GetListFlows(input, dataCreator);
             var expectedResult = "5.125 -2 3 -5 3 1 -2 -3";
             string expectedResultDecemal =
-                String.Join(" ",
+                string.Join(" ",
                     expectedResult.Split(' ').ToList().Select(x => decimal.Parse(x, CultureInfo.InvariantCulture))) +
                 " ";
 
             var names = list.Select(x => x.Value.EndPointValue);
-            var result = String.Join(" ", names.ToArray());
+            var result = string.Join(" ", names.ToArray());
 
             Assert.AreEqual(result, expectedResultDecemal);
         }

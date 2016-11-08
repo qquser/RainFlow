@@ -1,4 +1,4 @@
-﻿using RainFlowConsoleApp.Data;
+﻿using RF.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace RainFlowConsoleApp.LinkedList
+namespace RF.LinkedList
 {
     public class MyLinkedList<TData> : IEnumerable<Node<TData>>
     {

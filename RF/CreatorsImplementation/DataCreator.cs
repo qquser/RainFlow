@@ -4,12 +4,12 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RainFlowConsoleApp.Creators;
-using RainFlowConsoleApp.Data;
-using RainFlowConsoleApp.DataImplementation;
-using RainFlowConsoleApp.LinkedList;
+using RF.Creators;
+using RF.Data;
+using RF.DataImplementation;
+using RF.LinkedList;
 
-namespace RainFlowConsoleApp.CreatorsImplementation
+namespace RF.CreatorsImplementation
 {
     public class DataCreator : IDataCreator<FlowData>
     {

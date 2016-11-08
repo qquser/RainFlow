@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using RainFlowConsoleApp.Data;
-using RainFlowConsoleApp.DataImplementation;
-using RainFlowConsoleApp.LinkedList;
+using RF.Data;
+using RF.DataImplementation;
+using RF.LinkedList;
 
-namespace RainFlowConsoleApp.Test.LinkedList
+namespace RF.Test.LinkedList
 {
     [TestFixture]
     public class MyLinkedListTest

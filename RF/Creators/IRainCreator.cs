@@ -1,13 +1,13 @@
-﻿using RainFlowConsoleApp.Data;
+﻿using RF.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RainFlowConsoleApp.DataImplementation;
-using RainFlowConsoleApp.LinkedList;
+using RF.DataImplementation;
+using RF.LinkedList;
 
-namespace RainFlowConsoleApp.Creators
+namespace RF.Creators
 {
     public interface IRainCreator<TData> where TData : IData
     {

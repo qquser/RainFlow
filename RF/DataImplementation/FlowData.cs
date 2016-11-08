@@ -1,7 +1,7 @@
 ﻿using System;
-using RainFlowConsoleApp.Data;
+using RF.Data;
 
-namespace RainFlowConsoleApp.DataImplementation
+namespace RF.DataImplementation
 {
     public class FlowData : IData
     {

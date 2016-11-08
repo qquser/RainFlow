@@ -1,41 +1,27 @@
-﻿using RainFlowConsoleApp.Creators;
-using RainFlowConsoleApp.Data;
-using RainFlowConsoleApp.Rain;
-using System;
-using System.Linq;
-using RainFlowConsoleApp.CreatorsImplementation;
-using RainFlowConsoleApp.DataImplementation;
-using RainFlowConsoleApp.LinkedList;
+﻿using System;
+using RF.ConsoleApp.AppController;
 
-namespace RainFlowConsoleApp
+
+namespace RF.ConsoleApp
 {
     class Program
     {
         static void Main()
         {
-            //https://en.wikipedia.org/wiki/Rainflow-counting_algorithm
-            //http://fsapr2000.ru/topic/68929-metod-dozhdia/
-            Console.WriteLine("RainFlow");
-            Console.WriteLine("Enter stress values. Input example:  12.1 1.55 -5 -5 7 4 -10");
-            Run();
-            Console.ReadKey();
-        }
-
-        public static void Run()
-        {
-            try
+            var controller = new ApplicationController(new SimpleInjectorAdapter()).InitializeDi();
+            while (true)
             {
-                string input = Console.ReadLine();
-                IRainCreator<FlowData> rainCreator = new RainCreator();
-                IDataCreator<FlowData> dataCreator = new DataCreator();
-                IRainFlow<FlowData> rainflow = new RainFlow(input, rainCreator, dataCreator);
-                rainflow.PrintResult();
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Enter command (help to display help): ");
+                    ((ICommandService)controller.GetInstance<ICommandService>()).Execute(Console.ReadLine());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error!\t" + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error!\t" + ex.Message);
-                Run();
-            }
-        }
+       }
     }
 }

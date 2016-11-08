@@ -1,11 +1,11 @@
-﻿using RainFlowConsoleApp.Data;
+﻿using RF.Data;
 using System.Collections.Generic;
 using System.Linq;
-using RainFlowConsoleApp.Creators;
-using RainFlowConsoleApp.DataImplementation;
-using RainFlowConsoleApp.LinkedList;
+using RF.Creators;
+using RF.DataImplementation;
+using RF.LinkedList;
 
-namespace RainFlowConsoleApp.CreatorsImplementation
+namespace RF.CreatorsImplementation
 {
     public class RainCreator : IRainCreator<FlowData>
     {

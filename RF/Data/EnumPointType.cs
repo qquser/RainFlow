@@ -1,5 +1,5 @@
 ﻿
-namespace RainFlowConsoleApp.Data
+namespace RF.Data
 {
     public enum EnumPointType
     {

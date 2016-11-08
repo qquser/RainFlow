@@ -1,18 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CADEDDF7-AE2E-40B6-ACC3-5EC84E9AB94E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{04696BD3-0C96-40CF-9CEF-CEC6E9B0E027}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RainFlowConsoleApp.Test</RootNamespace>
-    <AssemblyName>RainFlowConsoleApp.Test</AssemblyName>
+    <RootNamespace>RF.ConsoleApp</RootNamespace>
+    <AssemblyName>RF.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="SimpleInjector, Version=3.2.7.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.2.7\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -40,25 +44,33 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creators\DataCreatorTest.cs" />
-    <Compile Include="Creators\RainCreatorTest.cs" />
-    <Compile Include="LinkedList\MyLinkedListTest.cs" />
+    <Compile Include="AppController\ApplicationController.cs" />
+    <Compile Include="AppController\ApplicationSetup.cs" />
+    <Compile Include="AppController\IApplicationController.cs" />
+    <Compile Include="AppController\IContainer.cs" />
+    <Compile Include="AppController\SimpleInjectorAdapter.cs" />
+    <Compile Include="CommandService.cs" />
+    <Compile Include="ICommandService.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RainFlowConsoleApp\RainFlowConsoleApp.csproj">
-      <Project>{04696BD3-0C96-40CF-9CEF-CEC6E9B0E027}</Project>
-      <Name>RainFlowConsoleApp</Name>
+    <ProjectReference Include="..\RF.BL\RF.BL.csproj">
+      <Project>{77249ec8-2e0a-4e6e-88f4-a38449aecaa1}</Project>
+      <Name>RF.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RF\RF.csproj">
+      <Project>{2be69416-c1e4-4fe7-bdbd-9b361d375b7f}</Project>
+      <Name>RF</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

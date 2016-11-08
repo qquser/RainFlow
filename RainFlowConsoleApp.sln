@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainFlowConsoleApp", "RainFlowConsoleApp\RainFlowConsoleApp.csproj", "{04696BD3-0C96-40CF-9CEF-CEC6E9B0E027}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF.ConsoleApp", "RainFlowConsoleApp\RF.ConsoleApp.csproj", "{04696BD3-0C96-40CF-9CEF-CEC6E9B0E027}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{48A25227-3D8B-46A6-AB56-2FE8E2DF0623}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainFlowConsoleApp.Test", "RainFlowConsoleApp.Test\RainFlowConsoleApp.Test.csproj", "{CADEDDF7-AE2E-40B6-ACC3-5EC84E9AB94E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF.Test", "RainFlowConsoleApp.Test\RF.Test.csproj", "{CADEDDF7-AE2E-40B6-ACC3-5EC84E9AB94E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF", "RF\RF.csproj", "{2BE69416-C1E4-4FE7-BDBD-9B361D375B7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF.BL", "RF.BL\RF.BL.csproj", "{77249EC8-2E0A-4E6E-88F4-A38449AECAA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{CADEDDF7-AE2E-40B6-ACC3-5EC84E9AB94E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CADEDDF7-AE2E-40B6-ACC3-5EC84E9AB94E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CADEDDF7-AE2E-40B6-ACC3-5EC84E9AB94E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE69416-C1E4-4FE7-BDBD-9B361D375B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE69416-C1E4-4FE7-BDBD-9B361D375B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE69416-C1E4-4FE7-BDBD-9B361D375B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE69416-C1E4-4FE7-BDBD-9B361D375B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77249EC8-2E0A-4E6E-88F4-A38449AECAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77249EC8-2E0A-4E6E-88F4-A38449AECAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77249EC8-2E0A-4E6E-88F4-A38449AECAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77249EC8-2E0A-4E6E-88F4-A38449AECAA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

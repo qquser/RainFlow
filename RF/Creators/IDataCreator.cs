@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using RainFlowConsoleApp.Data;
-using RainFlowConsoleApp.LinkedList;
+using RF.Data;
+using RF.LinkedList;
 
-namespace RainFlowConsoleApp.Creators
+namespace RF.Creators
 {
     public interface IDataCreator<TData> where TData : IData
     {
