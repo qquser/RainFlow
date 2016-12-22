@@ -14,15 +14,14 @@ namespace RF.ConsoleApp
             _controller = controller;
         }
 
-        public ICommand Execute(string input)
+        public ICommand Execute(string commandName)
         {
-            Type commandType = CommandKnownTypes.GetKnownTypes(input);
+            Type commandType = CommandKnownTypes.GetKnownTypes(commandName);
             Type commandHandlerType = typeof(ICommandHandler<>).MakeGenericType(commandType);
 
             dynamic commandHandler = _controller.GetInstance(commandHandlerType);
             dynamic command = _controller.GetInstance(commandType);
             commandHandler.Handle(command);
-
             return command;
         }
     }

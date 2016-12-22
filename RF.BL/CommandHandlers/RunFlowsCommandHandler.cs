@@ -16,43 +16,26 @@ namespace RF.BL.CommandHandlers
             _rainflow = rainflow;
         }
 
-        public void Handle(RunFlowsCommand command)
+        public async void Handle(RunFlowsCommand command)
         {
-
             Console.WriteLine("Enter input file path. Input example:  E:\\input.txt");
             var inputFilePath = Console.ReadLine();
             Console.WriteLine("Enter output file path. Output example:  E:\\output.txt");
             var outputFilePath = Console.ReadLine();
             var fileNames = new string[2];
-            fileNames[0] = inputFilePath;
-            fileNames[1] = outputFilePath;
-            var task = new Task(x => PrintAsync((string[])x), fileNames);
-            task.Start();
-
+            fileNames[0] = inputFilePath; //@"E:\input.txt";//
+            fileNames[1] = outputFilePath; // @"E:\output.txt"; 
+            await Task.Run(() => PrintResults(fileNames));
+            command.Response = "async task complited!";
         }
 
-        private void PrintAsync(string[] fileNames)
+
+        private void PrintResults(string[] fileNames)
         {
             try
             {
-                var startTime = DateTime.Now.Millisecond;
                 var inputFilePath = fileNames[0];
                 var outputFilePath = fileNames[1];
-                PrintResults(inputFilePath, outputFilePath);
-                var endTime = DateTime.Now.Millisecond;
-                Console.WriteLine("Complited!" + (endTime - startTime));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-        
-
-
-        private void PrintResults(string inputFilePath, string outputFilePath)
-        {
-
                 var outputFile = new StreamWriter(outputFilePath);
                 const int bufferSize = 128;
                 using (var fileStream = File.OpenRead(inputFilePath))
@@ -67,8 +50,11 @@ namespace RF.BL.CommandHandlers
                     }
                 }
                 outputFile.Close();
-
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

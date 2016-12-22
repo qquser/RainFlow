@@ -1,6 +1,6 @@
 ﻿namespace RF.BL.Commands
 {
-    public class RunFlowCommand : ICommand
+    public class RunFlowCommand : BaseCommand, ICommand
     {
     }
 }

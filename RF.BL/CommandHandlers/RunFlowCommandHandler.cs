@@ -18,7 +18,7 @@ namespace RF.BL.CommandHandlers
             Console.WriteLine("RainFlow");
             Console.WriteLine("Enter stress values. Input example:  12.1 1.55 -5 -5 7 4 -10");
             _rainflow.Input = Console.ReadLine();
-            Console.WriteLine(_rainflow.ToString());
+            command.Response = _rainflow.ToString();
         }
     }
 }

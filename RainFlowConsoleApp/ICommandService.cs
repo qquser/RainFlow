@@ -4,6 +4,6 @@ namespace RF.ConsoleApp
 {
     public interface ICommandService
     {
-        ICommand Execute(string command);
+        ICommand Execute(string commandName);
     }
 }
